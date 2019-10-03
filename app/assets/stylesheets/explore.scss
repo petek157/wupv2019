@@ -1,0 +1,10 @@
+.topic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 450px;
+    background: image_url("explore.jpg");
+    z-index: -1;
+    overflow: hidden;
+}

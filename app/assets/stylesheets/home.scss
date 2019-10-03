@@ -20,15 +20,20 @@ header {
     height: 50px;
     z-index: 1000;
     padding: 14px 0 5px 0;
-    background: rgba(255,255,255,.78);
+    //background: rgba(255,255,255,.78);
+
+    &.map {
+        background: transparent;
+    }
 
     #mobile-menu {
         position: fixed;
-        display: none;
-        top: 50px;
+        display: flex;
+        height: 50px;
+        bottom: 0;
         right: 0;
         left: 0;
-        flex-direction: column;
+        flex-direction: row;
         background-color: rgb(64, 126, 177);
         z-index: 1001;
         text-align: center;
@@ -38,6 +43,7 @@ header {
             padding-bottom: 8px;
             text-decoration: none;
             font-size: 16px;
+            flex-grow: 1;
         }
     }
 
@@ -60,8 +66,8 @@ header {
         
 
         .logo {
-            flex-grow: 2;
-            
+            flex-grow: 1;
+            text-align: center;
         }
 
         .desk-menu {
@@ -175,6 +181,36 @@ header {
 
 }
 
+.nav-top-above-white-explore {
+    z-index: 1000;
+    bottom: 0;
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 66px;
+    overflow: hidden;
+}
+
+.nav-top-above-white-explore:before {
+    position: absolute;
+    opacity: 1;
+    transform: translateX(-2%);
+    background-image: image-url("nav_top_white.svg");
+    //background-position: center bottom;
+
+    content: "";
+    display: block;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    //background: no-repeat center top;
+    background-size: 2016px auto;
+
+}
+
 .push {
     padding-top: 66px;
 }
@@ -183,11 +219,15 @@ header {
     img {
         width: 100%;
     }
+    height: 450px;
+    
     position: relative;
-    max-height: 560px;
+
     overflow: hidden;
     z-index: 0;
 }
+
+
 
 #topic-boxes {
     margin-top: 20px;
@@ -243,12 +283,20 @@ footer {
     height: 100px;
     width: 100%;
     background-color: orange;
+    padding-bottom: 50px;
+}
+
+#bulk {
+    z-index: 1000;
+    margin-top: 450px;
+    background-color: white;
 }
 
 @media only screen and (min-width: 768px) {
 
     #bulk {
         max-width: 1140px;
+
     }
 
     .make-space {
@@ -366,6 +414,36 @@ footer {
     }
 
     .nav-top-above-white:before {
+        position: absolute;
+        opacity: 1;
+        transform: translateX(-2%);
+        background-image: image-url("nav_top_white.svg");
+        //background-position: center bottom;
+
+        content: "";
+        display: block;
+        top: 0;
+        left: -5%;
+        width: 110%;
+        height: 100%;
+        //background: no-repeat center top;
+        background-size: 2016px auto;
+
+    }
+
+    .nav-top-above-white-explore {
+        z-index: 1000;
+        bottom: 0;
+
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0;
+        padding-top: 66px;
+        overflow: hidden;
+    }
+
+    .nav-top-above-white-explore:before {
         position: absolute;
         opacity: 1;
         transform: translateX(-2%);

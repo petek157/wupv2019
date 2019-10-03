@@ -1,0 +1,42 @@
+.head-holder {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.head1 {
+    background: image_url("summitPorkies.jpg");
+    opacity: 1;
+
+}
+
+.head2 {
+    background: image_url("wake1cleansmall.jpg");
+
+    display: none;
+}
+
+.headline {
+    padding-top: 0px;
+    height: 100%;
+    //display: inline-block;
+    vertical-align: middle;
+    //background: image_url("summitPorkies.jpg");
+}
+
+.headline-title {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.headline-info {
+    color: white;
+    font-style: italic;
+    text-align: center;
+}

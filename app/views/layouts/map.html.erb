@@ -12,9 +12,11 @@
   </head>
 
   <body>
-    <header>
+    <header class="map">
     <div id="mobile-menu">
+        <a href="/">Home</a><!--business-->
         <a href="explore">Explore</a><!--Main Attractions-->
+        <a href="shop">Shop</a><!--business-->
         <a href="stay">Stay</a><!--lodging system and just facilities, fly in (airport) -->
         <a href="maps">Maps</a><!--Trails, hills, falls, snow totals/coverage etc-->
         <a href="conditions">Conditions</a><!--Trails, hills, falls(how much the falls are running), fall colors,  etc-->
@@ -22,6 +24,7 @@
     </div>
         <div class="container make-space">
             <a class="logo" href="<%= root_path()%>">Logo</a>
+            <div class="mobile-menu-icon">Menu</div>
             
             <nav class="desk-menu">
                 <ul>
@@ -35,7 +38,7 @@
                 <%= @user.nil? ? link_to("Login", "#") : "Hello #{@user.first}" %>
             </div>
         </div>
-        <!--<div class="nav-bottom-below-white"></div>-->
+        
     </header>
     
     <div class="home-content">
