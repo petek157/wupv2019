@@ -28,7 +28,8 @@ header {
 
     #mobile-menu {
         position: fixed;
-        display: flex;
+        display: none;
+        //display: flex;
         height: 50px;
         bottom: 0;
         right: 0;
@@ -233,6 +234,19 @@ header {
     margin-top: 20px;
     margin-bottom: 20px;
     
+    .category {
+        width: 100%;
+        background-color: green;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        .cat-name {
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
     .box {
         display: flex;
         flex-direction: column;
@@ -262,10 +276,11 @@ header {
 
 #welcome {
     .title {
-        font-size: 55px;
+        font-size: 35px;
         padding-top: 10px;
         color: rgb(253, 125, 19);
         font-family: 'Permanent Marker', cursive;
+        text-align: center;
     }
 
     .sub-title {
@@ -288,7 +303,7 @@ footer {
 
 #bulk {
     z-index: 1000;
-    margin-top: 450px;
+    margin-top: 0px;
     background-color: white;
 }
 
@@ -509,6 +524,7 @@ footer {
             padding-top: 10px;
             color: rgb(253, 125, 19);
             font-family: 'Permanent Marker', cursive;
+            text-aligh: left;
         }
 
         .sub-title {

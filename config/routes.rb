@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'stay', to: 'home#stay'
   get 'maps', to: 'home#maps'
   get 'conditions', to: 'home#conditions'
+  get 'business', to: 'home#businesses'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
