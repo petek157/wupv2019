@@ -28,9 +28,11 @@
     <div id="topic-boxes" class="make-space">
         
         <% @cats.each do |c| %>
+            <%= link_to business_path(cat: c), class: "cat-link" do %>
             <div class="category" >
-                <%= link_to c, business_path(cat: c), class: "cat-name"%>
+                <div class="cat-name"><%= c %></div>
             </div>
+            <% end %>
         <% end %>
 
         <!--<div class="box">

@@ -114,4 +114,21 @@ $(document).on("turbolinks:load", function() {
             slideTimer = setInterval(function() {slide(current)}, 14000);
         });
 
+
+        
 });
+
+//Business Map
+        function initMap(businesses) {
+            var lat = parseFloat(businesses[0].latitude);
+            var lng = parseFloat(businesses[0].longitude);
+            // console.log(businesses);
+            // console.log(lat);
+            // console.log(lng);
+            var myCoords = new google.maps.LatLng(lat, lng);
+            var mapOptions = {
+            center: myCoords,
+            zoom: 14
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }

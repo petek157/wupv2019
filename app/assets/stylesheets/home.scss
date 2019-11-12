@@ -13,7 +13,12 @@ body {
 }
 
 header {
-    position: fixed;
+    &.fixed {
+        position: fixed;
+    }
+    &.relative{
+        position: relative;
+    }
     left: 0px;
     top: 0px;
     right: 0px;
@@ -226,6 +231,11 @@ header {
 
     overflow: hidden;
     z-index: 0;
+
+    .map {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 
@@ -234,16 +244,26 @@ header {
     margin-top: 20px;
     margin-bottom: 20px;
     
+    .cat-link {
+        text-decoration: none;;
+    }
+
     .category {
         width: 100%;
         background-color: green;
         border-radius: 5px;
         margin-top: 10px;
+        cursor: pointer;
 
         .cat-name {
             text-align: center;
             padding-top: 10px;
             padding-bottom: 10px;
+            text-decoration: none;
+            color: white;
+            &:visted {
+                color: white;
+            }
         }
     }
 
@@ -320,12 +340,14 @@ footer {
     }
 
     header {
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        right: 0px;
-        height: 50px;
-        z-index: 10000;
+        &.fixed {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            height: 50px;
+            z-index: 10000;
+        }
         padding: 14px 0 5px 0;
         background: rgba(255,255,255,.78);
 

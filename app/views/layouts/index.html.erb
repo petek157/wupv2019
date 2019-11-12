@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="fixed">
     <div id="mobile-menu">
         <a href="explore">Explore</a><!--Main Attractions-->
         <a href="stay">Stay</a><!--lodging system and just facilities, fly in (airport) -->
@@ -21,7 +21,9 @@
         <%= @user.nil? ? link_to("Login", "#") : "Hello #{@user.first}" %>
     </div>
         <div class="container make-space">
-            <a class="logo" href="<%= root_path()%>">Logo</a>
+            <%= link_to root_path(), class: "logo" do %>
+                <%=image_tag('flatVacationerLogo.png')%>
+            <% end %>
             
             <nav class="desk-menu">
                 <ul>

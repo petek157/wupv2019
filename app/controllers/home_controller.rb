@@ -21,12 +21,13 @@ class HomeController < ApplicationController
       redirect(root)
     else
 
-      @title = params[:cat]
+    @title = params[:cat]
     @subtitle = "Find the products and service you need."
     @message = "This will be the general welcome message. It should be about 5-8 lines long on a full screen and can be clip shorter on a mobile device. 'alihs'lhglkjnafdgm fg kjnfaj skdnf sn kj dfoigIOPqj jkdf gj wd kdfj hdwkjfhv jlwhjhe jfhq jhe fgjh wdfjgh dwjfhg j,wdhf gwhdf g.hwdf.gh feg;qheghqjfhv jhd vjqh dgh ejrhg jhfg jhdfgjqejrgquertiuqergiuqf gjh qdfgjh qehgjqh egjh qjge qjfgiuqeg qjegh qidf gjh qefghqihe gjhq egjh qejg jqfgj qfegh qejhr fjh dfjh qjerh tjqh ejrth qjerht jqr efjhqrehrf."
 
-      @businesses = Business.where(category: params[:cat])
-      render layout: "front"
+    @businesses = Business.where(category: params[:cat])
+    @test = '\"TEST\"'
+    render layout: "front"
     end
   end
 

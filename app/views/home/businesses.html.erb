@@ -1,6 +1,13 @@
-<div class="topic">
-    <%=image_tag('wake1cleansmall.jpg')%>
-    
+<% provide :head_tags do %>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap(<%= raw @businesses.to_json%>)
+    });
+    </script>
+<% end %>
+<div class="slider">
+    <div id="map"></div>
+    <div class="nav-top-above-white"></div>
 </div>
 <div id="bulk" class="make-space">
     
