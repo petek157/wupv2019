@@ -119,16 +119,38 @@ $(document).on("turbolinks:load", function() {
 });
 
 //Business Map
-        function initMap(businesses) {
-            var lat = parseFloat(businesses[0].latitude);
-            var lng = parseFloat(businesses[0].longitude);
-            // console.log(businesses);
-            // console.log(lat);
-            // console.log(lng);
-            var myCoords = new google.maps.LatLng(lat, lng);
-            var mapOptions = {
-            center: myCoords,
-            zoom: 14
-            };
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        }
+function initMap(businesses) {
+
+            
+
+    var mlat = parseFloat(businesses[0].latitude);
+    var mlng = parseFloat(businesses[0].longitude);
+
+    var myCoords = new google.maps.LatLng(mlat, mlng);
+    var mapOptions = {
+    center: myCoords,
+    zoom: 14,
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false
+    };
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0; i < businesses.length; i++) {
+        var bs = businesses[i];
+        var lat = parseFloat(bs.latitude);
+        var lng = parseFloat(bs.longitude);
+        var myCoordsm = new google.maps.LatLng(lat, lng);
+
+        var marker = new google.maps.Marker({
+            position: myCoordsm,
+            map: map,
+            title: bs.name
+        });
+
+        bounds.extend(marker.getPosition());
+    }
+
+    map.fitBounds(bounds, 100);
+    map.setZoom(14);
+}
