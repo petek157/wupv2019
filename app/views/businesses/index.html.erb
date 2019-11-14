@@ -1,3 +1,5 @@
 <% @businesses.each do |b| %>
-    <div><%= b.name %><br/>
+    <div>
+        <%= link_to b.name, business_path(b.id) %><br/>
+    </div>
 <% end %>

@@ -2,6 +2,8 @@ class AccessController < ApplicationController
   def menu
     if session[:user_id] == nil
       redirect_to access_login_path()
+    else
+      redirect_to businesses_path()
     end
   end
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Western UP Vacation</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.dig(:google_maps_api_key)}" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Permanent+Marker&display=swap" rel="stylesheet">
+    <%= yield(:head_tags) %>
+  </head>
+
+  <body>
+    <header class="absolute">
+
+        <div id="mobile-menu">
+            <a href="explore">Explore</a><!--Main Attractions-->
+            <a href="stay">Stay</a><!--lodging system and just facilities, fly in (airport) -->
+            <a href="maps">Maps</a><!--Trails, hills, falls, snow totals/coverage etc-->
+            <a href="conditions">Conditions</a><!--Trails, hills, falls(how much the falls are running), fall colors,  etc-->
+            <%= @user.nil? ? link_to("Login", access_login_path) : link_to("Logout", access_logout_path) %>
+        </div>
+        
+    </header>
+    
+    <div class="home-content">
+        <%= yield %>
+        <footer></footer>
+    </div>
+    
+  </body>
+</html>

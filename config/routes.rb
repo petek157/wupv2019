@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'stay', to: 'home#stay'
   get 'maps', to: 'home#maps'
   get 'conditions', to: 'home#conditions'
-  get 'business', to: 'home#businesses'
+  get 'bus', to: 'home#bus'
 
   resources :businesses do
     member do

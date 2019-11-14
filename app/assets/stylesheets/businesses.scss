@@ -1,3 +1,25 @@
 // Place all the styles related to the businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-item {
+    margin-bottom:5px;
+
+    .form-item-flex {
+        display: flex;
+        align-content: flex-start;
+    }
+
+}
+
+.form-input {
+    font-size: 20px;
+    padding: 5px 0px 5px 5px;
+    border-radius: 3px;
+    width: 97%;
+    border-color: rgb(216, 213, 213);
+}
+
+.active-label {
+    margin-left: 10px;
+}

@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     render layout: "index"
   end
 
-  def businesses
+  def bus
     if !params[:cat]
       redirect(root)
     else

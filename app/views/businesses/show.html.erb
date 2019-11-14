@@ -1,2 +1,73 @@
-<h1>Businesses#show</h1>
-<p>Find me in app/views/businesses/show.html.erb</p>
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            initAdminMap(<%= raw @bus.to_json%>)
+        });
+    </script>
+<% end %>
+
+<div class="slider">
+    <div id="map"></div>
+    <div class="nav-top-above-white"></div>
+</div>
+
+<div id="bulk" class="make-space">
+    <%= form_for(@bus, method: :put) do |f| %>
+        <%= hidden_field(:position, :readonly => true) %>
+        <div class="project-form-fields">
+
+            <%= content_tag(:div, f.text_field(:name, class: ["form-input", "form-company"], placeholder: "Business Name"), class: "form-item") %>
+
+            <div class="coords">
+                <%= f.text_field(:latitude, class: "bus-lat", placeholder: "Click on Map") %>
+                <%= f.text_field(:longitude, class: "bus-lng", placeholder: "Click on Map") %>
+            </div>
+
+            <div class="form-item">
+                <div class="radio-label">Active?</div>
+                <div class="form-item-flex">
+                    <%= f.radio_button(:isActive, :true) %>
+                    <%= label_tag(:active_true, "True", class: "active-label") %>
+                </div>
+                <div class="form-item-flex">
+                    <%= f.radio_button(:isActive, :false) %>
+                    <%= label_tag(:active_false, "False", class: "active-label") %>
+                </div>
+            </div>
+            
+            <%= content_tag(:div, f.text_field(:category, class: ["form-input", "form-position"], placeholder: "Business Category"), class: "form-item") %>
+
+            <%= content_tag(:div, f.text_field(:address1, class: ["form-input", "form-position"], placeholder: "Address"), class: "form-item") %>
+            
+            <%= content_tag(:div, f.text_field(:address2, class: ["form-input", "form-position"], placeholder: "Address"), class: "form-item") %>
+
+            <%= content_tag(:div, f.text_field(:city, class: ["form-input", "form-company"], placeholder: "City"), class: "form-item") %>
+
+            <%= content_tag(:div, f.text_field(:state, class: ["form-input", "form-company"], placeholder: "State"), class: "form-item") %>
+
+            <%= content_tag(:div, f.text_field(:zipcode, class: ["form-input", "form-position"], placeholder: "Zipcode"), class: "form-item") %>
+
+            <%= content_tag(:div, f.text_field(:phone, class: ["form-input", "form-position"], placeholder: "Phone"), class: "form-item") %>
+
+            <%= content_tag(:div, f.text_field(:website, class: ["form-input", "form-position"], placeholder: "Website"), class: "form-item") %>
+            
+            <div class="form-item">
+                <div class="radio-label">Featured</div>
+                <div class="form-item-flex">
+                    <%= f.radio_button(:isFeatured, :true) %>
+                    <%= label_tag(:featured_true, "True", class: "active-label") %>
+                </div>
+                <div class="form-item-flex">
+                    <%= f.radio_button(:isFeatured, :false) %>
+                    <%= label_tag(:featured_false, "False", class: "active-label") %>
+                </div>
+            </div>
+
+            <div class="form-buttons">
+                <%= f.submit("Save", class: ["res-button", "print"]) %>
+                <button class="res-button back"><%= link_to("Cancel", businesses_path()) %></button>
+            </div>
+        </div>
+    <% end %>
+</div>
