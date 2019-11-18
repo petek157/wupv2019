@@ -1,3 +1,4 @@
+<%= link_to "+ Business", new_business_path() %><br/>
 <% @businesses.each do |b| %>
     <div>
         <%= link_to b.name, business_path(b.id) %><br/>

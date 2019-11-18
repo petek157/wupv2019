@@ -23,3 +23,70 @@
 .active-label {
     margin-left: 10px;
 }
+
+#featured-boxes {
+    display: flex;
+    justify-content: center;
+}
+
+.bus-item {
+
+    .item-box {
+        padding:5px;
+        box-shadow: 2px 2px 2px 2px grey;
+        margin-bottom: 8px;
+
+
+        .item-name {
+            font-size: 20px;
+        }
+    }
+}
+
+.bus-list-box {
+    display: none;
+}
+
+.business-name {
+    a {
+        color: black;
+        text-decoration: none;
+        &:visited {
+            color: black;
+        }
+    }
+
+    &.selected {
+        font-weight: bold;
+    }
+}
+
+.bus-cancel-large {
+    display: none;
+}
+.bus-cancel-small {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .bus-cancel-large {
+        display: block;
+    }
+    .bus-cancel-small {
+        display: none;
+    }
+
+    #bulk {
+        display: flex;
+    }
+    .bus-list-box {
+        display: block;
+    }
+
+    .bus-form-box {
+        flex-grow: 1;
+        padding-left: 50px;
+    }
+
+}

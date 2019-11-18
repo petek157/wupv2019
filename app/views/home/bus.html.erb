@@ -19,14 +19,32 @@
     
     <div id="welcome" class="make-space">
         <div class="title"><%= @title%></div>
-        <div class="sub-title"><%= @subtitle%></div>
-        <div class="welcome-info"><%= @message%></div>
+    </div>
+
+    <div id="featured-boxes" class="make-space">
+        <% @businesses.each do |b| %>
+
+            <% if b.isFeatured && b.featureAd.attached? %>
+                <%= image_tag(b.featureAd, class: "list-item-image")%>
+            <% end %>
+        <% end %>
     </div>
 
     <div id="topic-boxes" class="make-space">
         <% @businesses.each do |b| %>
-            <div class="category" >
-                <div class="cat-name"><%= b.name %></div>
+            <div class="bus-item" >
+                <div class="item-box">
+                    <div class="item-name"><%= b.name %></div>
+                    <div class="item-address"><%= b.address1 %></div>
+                    <% if b.address2 %>
+                        <div class="item-address"><%= b.address2 %></div>
+                    <% end %>
+                    <div class="item-city"><%= "#{b.city}, #{b.state} #{b.zipcode}" %></div>
+                    <div class="item-phone"><%= b.phone %></div>
+                    <% if b.website %>
+                        <div class="item-website"><%= b.website %></div>
+                    <% end %>
+                </div>
             </div>
         <% end %>
     </div>
