@@ -12,32 +12,12 @@
   </head>
 
   <body>
-    <header class="fixed">
-    <div id="mobile-menu">
-        <a href="explore">Explore</a><!--Main Attractions-->
-        <a href="stay">Stay</a><!--lodging system and just facilities, fly in (airport) -->
-        <a href="maps">Maps</a><!--Trails, hills, falls, snow totals/coverage etc-->
-        <a href="conditions">Conditions</a><!--Trails, hills, falls(how much the falls are running), fall colors,  etc-->
-        <%= @user.nil? ? link_to("Login", "#") : "Hello #{@user.first}" %>
-    </div>
+    <header class="absolute">
         <div class="container make-space">
             <%= link_to root_path(), class: "logo" do %>
                 <%=image_tag('flatVacationerLogo.png')%>
             <% end %>
-            
-            <nav class="desk-menu">
-                <ul>
-                    <li class="menu-item"><a href="#">Explore</a></li><!--business-->
-                    <li class="menu-item"><a href="#">Stay</a></li><!--lodging system and just facilities, fly in (airport) -->
-                    <li class="menu-item"><a href="#">Maps</a></li><!--Trails, hills, falls, snow totals/coverage etc-->
-                    <li class="menu-item"><a href="#">Conditions</a></li><!--Trails, hills, falls(how much the falls are running), fall colors,  etc-->
-                </ul>
-            </nav>
-            <div id="user" class="desk-menu">
-                <%= @user.nil? ? link_to("Login", "#") : "Hello #{@user.first}" %>
-            </div>
         </div>
-        <!--<div class="nav-bottom-below-white"></div>-->
     </header>
     
     <div class="home-content">

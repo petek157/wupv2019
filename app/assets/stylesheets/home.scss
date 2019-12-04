@@ -340,12 +340,11 @@ footer {
 
     #bulk {
         max-width: 1140px;
-
+        flex-direction: column;
     }
 
     .make-space {
         margin: 0 auto;
-        padding: 0 30px;
     }
 
     header {
@@ -357,8 +356,7 @@ footer {
             height: 50px;
             z-index: 10000;
         }
-        padding: 14px 0 5px 0;
-        background: rgba(255,255,255,.78);
+
 
         
 
@@ -574,6 +572,10 @@ footer {
         width: 100%;
         background-color: orange;
     }
+
+    .cat-name {
+        padding: 10px;
+    }
 }
 @media only screen and (max-width: 1440px) {
 
@@ -582,5 +584,7 @@ footer {
             width: 1440px;
         }
     }
+
+    
 
 }

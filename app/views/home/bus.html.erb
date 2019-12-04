@@ -12,7 +12,7 @@
 
 <div class="slider">
     <div id="map"></div>
-    <div class="nav-top-above-white"></div>
+
 </div>
 
 <div id="bulk" class="make-space">
@@ -30,20 +30,24 @@
         <% end %>
     </div>
 
-    <div id="topic-boxes" class="make-space">
+    <div id="bus-boxes" class="make-space">
         <% @businesses.each do |b| %>
             <div class="bus-item" >
                 <div class="item-box">
-                    <div class="item-name"><%= b.name %></div>
-                    <div class="item-address"><%= b.address1 %></div>
-                    <% if b.address2 %>
-                        <div class="item-address"><%= b.address2 %></div>
-                    <% end %>
-                    <div class="item-city"><%= "#{b.city}, #{b.state} #{b.zipcode}" %></div>
-                    <div class="item-phone"><%= b.phone %></div>
-                    <% if b.website %>
-                        <div class="item-website"><%= b.website %></div>
-                    <% end %>
+                    <div class="item-info">
+                        <div class="item-name"><%= b.name %></div>
+                        <div class="item-address"><%= b.address1 %></div>
+                        <% if b.address2 %>
+                            <div class="item-address"><%= b.address2 %></div>
+                        <% end %>
+                        <div class="item-city"><%= "#{b.city}, #{b.state} #{b.zipcode}" %></div>
+                        <div class="item-phone"><%= b.phone %></div>
+                    </div>
+                    <div class="item-nav">
+                        <% if b.website != "" %>
+                            <button class="item-website"><%= link_to "Website", b.website %></button>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         <% end %>

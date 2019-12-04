@@ -3,16 +3,25 @@ class BusinessesController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @businesses = Business.all
+    @businesses = Business.all.order("name ASC")
   end
 
   def show
     @bus = Business.find(params[:id])
     @user = AdminUser.find(session[:user_id]) if session[:user_id]
 
+    allcats = Business.select(:category).all.order('category ASC')
+    @cats = []
+    allcats.each do |c|
+      
+      unless @cats.include?(c.category)
+        @cats << c.category       
+      end
+    end
+
     @allBusinesses = Business.all.order("name ASC")
     @business = Business.find(params[:id])
-    
+
     render layout: "admin_business"
   end
 
@@ -25,6 +34,8 @@ class BusinessesController < ApplicationController
         @cats << c.category       
       end
     end
+
+    @allBusinesses = Business.all.order("name ASC")
     @bus = Business.new
 
     render layout: "admin_business"

@@ -15,6 +15,7 @@
 <div id="bulk" class="make-space">
     <div class="bus-list-box">
         <div id="bus-list">
+            <div class='business-name'><%= link_to("+ New Business", new_business_path()) %></div>
             <% @allBusinesses.each do |business| %>
                 <% if business.id == @business.id%>
                     <div class='business-name selected'><%= link_to(business.name, business_path(business.id)) %></div>
@@ -49,7 +50,8 @@
                     </div>
                 </div>
                 
-                <%= content_tag(:div, f.text_field(:category, class: ["form-input", "form-position"], placeholder: "Business Category"), class: "form-item") %>
+                <%= content_tag(:div, f.text_field(:category, class: ["form-input", "form-position", "cat-sel-text"], placeholder: "Business Category"), class: "form-item") %>
+            <%= select_tag(:category_sel, options_for_select(@cats), include_blank: "Category", class: "cat-sel" ) %>
 
                 <%= content_tag(:div, f.text_field(:address1, class: ["form-input", "form-position"], placeholder: "Address"), class: "form-item") %>
                 

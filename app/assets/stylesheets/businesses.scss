@@ -29,6 +29,10 @@
     justify-content: center;
 }
 
+.list-item-image {
+    margin-bottom: 10px;
+}
+
 .bus-item {
 
     .item-box {
@@ -39,6 +43,22 @@
 
         .item-name {
             font-size: 20px;
+        }
+    }
+
+    .item-website {
+
+        background-color: green;
+        border-color: transparent;
+        border-radius: 3px;
+        a {
+            text-decoration: none;
+            color: white;
+            
+
+            &:visited {
+                color: white
+            }
         }
     }
 }
@@ -89,4 +109,24 @@
         padding-left: 50px;
     }
 
+#bus-boxes {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .bus-item {
+        width: 300px;
+    }
+    
+    .item-box {
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
