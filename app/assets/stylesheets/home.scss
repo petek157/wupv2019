@@ -340,7 +340,11 @@ footer {
 
     #bulk {
         max-width: 1140px;
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 20px;
+        &.front {
+            flex-direction: column;
+        }
     }
 
     .make-space {
@@ -565,6 +569,11 @@ footer {
         .welcome-info {
             font-size: 18px;
         }
+    }
+
+    .feature {
+        height: 300px;
+        background-color: blue;
     }
 
     footer {
